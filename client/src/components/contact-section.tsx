@@ -124,14 +124,7 @@ export default function ContactSection() {
                 <h3 className="text-xl font-bold text-[#2F2F2F] mb-2">
                   {language === "de" ? "Nachricht gesendet!" : "Message Sent!"}
                 </h3>
-                <p className="text-[#2F2F2F]/80 mb-6">
-                  {statusMessage}
-                  {language === "de" && (
-                    <span className="block mt-2 text-sm text-[#2F2F2F]/60">
-                      (Thank you for your message. We will contact you shortly.)
-                    </span>
-                  )}
-                </p>
+                <p className="text-[#2F2F2F]/80 mb-6">{statusMessage}</p>
                 <Button 
                   onClick={() => setSubmitStatus('idle')}
                   className="bg-[#1A4D3C] hover:bg-[#1A4D3C]/90 text-white"
