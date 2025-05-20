@@ -14,23 +14,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ success: false, message: "Name, email and message are required" });
       }
       
-      // Send email notification using Mailjet
-      const emailSent = await sendContactNotification({
-        name,
-        email,
-        phone,
-        message,
-        services
-      });
-
-      if (emailSent) {
+      // Log the form submission
+      console.log("Contact form submitted:", { name, email, phone, message, services });
+      
+      try {
+        // Send email notification using Mailjet
+        const emailSent = await sendContactNotification({
+          name,
+          email,
+          phone,
+          message,
+          services
+        });
+        
+        console.log("Email notification status:", emailSent ? "Sent" : "Failed");
+        
         return res.status(200).json({ 
           success: true,
           message: "Message received successfully. You will be contacted shortly."
         });
-      } else {
-        // Even if the email fails, acknowledge receipt to user
-        console.warn("Contact form received but email notification failed");
+      } catch (emailError) {
+        // Log email sending error but still acknowledge receipt to user
+        console.error("Failed to send email notification:", emailError);
         return res.status(200).json({ 
           success: true,
           message: "Message received successfully. You will be contacted shortly."

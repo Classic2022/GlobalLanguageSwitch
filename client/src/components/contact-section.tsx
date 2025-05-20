@@ -71,19 +71,17 @@ export default function ContactSection() {
     try {
       setIsSubmitting(true)
       
-      const response = await apiRequest("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      const response = await apiRequest(
+        "POST",
+        "/api/contact",
+        {
           name,
           email,
           phone,
           message,
           services
-        }),
-      })
+        }
+      )
       
       const data = await response.json()
       

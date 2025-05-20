@@ -11,6 +11,12 @@ const mailjet = new Mailjet({
   apiSecret: process.env.MAILJET_SECRET_KEY || ''
 });
 
+// Log that Mailjet is properly configured
+console.log("Mailjet is configured with API keys:", 
+  process.env.MAILJET_API_KEY ? "API Key: [Set]" : "API Key: [Not Set]",
+  process.env.MAILJET_SECRET_KEY ? "Secret Key: [Set]" : "Secret Key: [Not Set]"
+);
+
 interface EmailData {
   name: string;
   email: string;
