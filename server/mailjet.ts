@@ -61,14 +61,136 @@ export async function sendContactNotification(data: EmailData): Promise<boolean>
           ],
           Subject: "New Contact Form Submission - Urban Reparaturen",
           TextPart: emailContent,
-          // Adding HTML part for better email rendering
+          // Adding HTML part with a professionally styled template
           HTMLPart: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-            <p><strong>Services:</strong> ${data.services && data.services.length > 0 ? data.services.join(', ') : 'None selected'}</p>
-            <p><strong>Message:</strong><br>${data.message.replace(/\n/g, '<br>')}</p>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>New Contact Form Submission</title>
+              <style>
+                body {
+                  font-family: Arial, sans-serif;
+                  line-height: 1.6;
+                  color: #333333;
+                  margin: 0;
+                  padding: 0;
+                  background-color: #f4f4f4;
+                }
+                .container {
+                  max-width: 600px;
+                  margin: 0 auto;
+                  padding: 20px;
+                  background-color: #ffffff;
+                  border-radius: 8px;
+                  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                }
+                .header {
+                  background-color: #1A4D3C;
+                  color: white;
+                  padding: 20px;
+                  text-align: center;
+                  border-radius: 8px 8px 0 0;
+                  margin: -20px -20px 20px;
+                }
+                .header h1 {
+                  margin: 0;
+                  font-size: 24px;
+                }
+                .logo {
+                  max-width: 150px;
+                  margin-bottom: 15px;
+                }
+                .info-box {
+                  background-color: #f9f9f9;
+                  border-left: 4px solid #1A4D3C;
+                  padding: 15px;
+                  margin-bottom: 20px;
+                  border-radius: 0 4px 4px 0;
+                }
+                .field {
+                  margin-bottom: 15px;
+                }
+                .field-name {
+                  font-weight: bold;
+                  color: #1A4D3C;
+                  margin-bottom: 5px;
+                }
+                .field-value {
+                  margin: 0;
+                }
+                .message-box {
+                  background-color: #f9f9f9;
+                  padding: 15px;
+                  border-radius: 4px;
+                  margin-top: 10px;
+                }
+                .service-tag {
+                  display: inline-block;
+                  background-color: #e8f5e9;
+                  color: #1A4D3C;
+                  padding: 4px 8px;
+                  border-radius: 4px;
+                  margin-right: 5px;
+                  margin-bottom: 5px;
+                  font-size: 14px;
+                }
+                .footer {
+                  margin-top: 30px;
+                  text-align: center;
+                  font-size: 14px;
+                  color: #777;
+                }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="header">
+                  <h1>New Inquiry from Urban Reparaturen Website</h1>
+                </div>
+                
+                <p>You have received a new contact form submission from the website. Here are the details:</p>
+                
+                <div class="info-box">
+                  <div class="field">
+                    <div class="field-name">Name:</div>
+                    <div class="field-value">${data.name}</div>
+                  </div>
+                  
+                  <div class="field">
+                    <div class="field-name">Email:</div>
+                    <div class="field-value"><a href="mailto:${data.email}" style="color: #1A4D3C;">${data.email}</a></div>
+                  </div>
+                  
+                  <div class="field">
+                    <div class="field-name">Phone:</div>
+                    <div class="field-value">${data.phone || 'Not provided'}</div>
+                  </div>
+                  
+                  <div class="field">
+                    <div class="field-name">Services Requested:</div>
+                    <div class="field-value">
+                      ${data.services && data.services.length > 0 
+                        ? data.services.map(service => `<span class="service-tag">${service}</span>`).join(' ')
+                        : 'None selected'}
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <div class="field-name">Message:</div>
+                  <div class="message-box">
+                    ${data.message.replace(/\n/g, '<br>')}
+                  </div>
+                </div>
+                
+                <div class="footer">
+                  <p>© ${new Date().getFullYear()} Urban Reparaturen | This is an automated message from your website contact form.</p>
+                </div>
+              </div>
+            </body>
+            </html>
           `
         }
       ]
