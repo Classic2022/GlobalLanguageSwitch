@@ -23,7 +23,7 @@ export default function WhyUsSection() {
 
   return (
     <section className="py-10 md:py-14 bg-white">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 mx-auto max-w-6xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold tracking-tight text-[#2F2F2F] mb-8">
             {language === "de" ? "Warum uns wählen?" : "Why Choose Us?"}

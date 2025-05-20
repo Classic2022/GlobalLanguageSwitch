@@ -66,7 +66,7 @@ export default function PriceListSection() {
 
   return (
     <section id="prices" className="py-10 md:py-16 bg-white border-t border-gray-100">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 mx-auto max-w-6xl">
         <h2 className="text-3xl font-bold tracking-tight text-[#2F2F2F] text-center mb-10">
           {language === "de" ? "Unsere Preise" : "Our Prices"}
         </h2>

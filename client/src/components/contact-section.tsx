@@ -110,7 +110,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-[#F8F8F8]">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 mx-auto max-w-6xl">
         <h2 className="text-3xl font-bold tracking-tight text-[#2F2F2F] text-center mb-12">
           {language === "de" ? "Kontakt" : "Contact"}
         </h2>
