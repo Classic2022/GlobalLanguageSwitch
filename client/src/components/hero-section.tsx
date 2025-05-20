@@ -41,7 +41,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[#1A4D3C]/80"></div>
 
       {/* Content */}
-      <div className="container relative z-10 text-center px-4 md:px-6">
+      <div className="container relative z-10 text-center px-4 mx-auto max-w-6xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
           {language === "de"
             ? "Ihr Partner für Altbaupflege in Berlin"

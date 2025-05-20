@@ -7,7 +7,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-16 md:py-24 bg-white">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 mx-auto max-w-6xl">
         <h2 className="text-3xl font-bold tracking-tight text-[#2F2F2F] mb-10 text-center">
           {language === "de" ? "Über uns" : "About Us"}
         </h2>

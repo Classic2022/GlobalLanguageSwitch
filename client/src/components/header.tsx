@@ -63,13 +63,13 @@ export default function Header() {
     <header className={`sticky top-0 z-50 w-full border-b border-border/40 ${
       scrolled ? "bg-background/95 shadow-sm" : "bg-background"
     } backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300`}>
-      <div className="container flex h-20 items-center justify-between">
-        <div className="flex items-center -ml-3">
+      <div className="container flex h-20 items-center justify-between px-4 mx-auto max-w-6xl">
+        <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <img 
               src="/images/urban-logo.png" 
               alt="Urban Reparaturen Logo" 
-              className="h-auto w-[196px] md:w-[224px]"
+              className="h-auto w-[180px] md:w-[200px]"
             />
           </Link>
         </div>
