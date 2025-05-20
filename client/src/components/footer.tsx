@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1A4D3C] text-white py-8">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-bold mb-4">Urban Reparaturen</h3>
