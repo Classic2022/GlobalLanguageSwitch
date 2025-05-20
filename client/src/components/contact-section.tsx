@@ -115,7 +115,7 @@ export default function ContactSection() {
           {language === "de" ? "Kontakt" : "Contact"}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10 items-start max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 items-start max-w-5xl mx-auto">
           {/* Contact Form */}
           <div className="bg-white p-6 rounded-lg shadow-sm">
             {submitStatus === 'success' ? (

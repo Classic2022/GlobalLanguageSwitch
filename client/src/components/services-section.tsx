@@ -76,9 +76,9 @@ export default function ServicesSection() {
           {language === "de" ? "Unsere Leistungen" : "Our Services"}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center h-full">
               <div className="mb-4">{service.icon}</div>
               <h3 className="text-xl font-bold text-[#2F2F2F] mb-3">
                 {language === "de" ? service.title.de : service.title.en}

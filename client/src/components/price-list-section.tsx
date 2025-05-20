@@ -71,14 +71,14 @@ export default function PriceListSection() {
           {language === "de" ? "Unsere Preise" : "Our Prices"}
         </h2>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="overflow-x-auto">
+        <div className="max-w-5xl mx-auto">
+          <div className="overflow-x-auto shadow-sm rounded-lg">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="bg-[#1A4D3C] text-white">
-                  <th className="px-6 py-4 text-left">{language === "de" ? "Leistung" : "Service"}</th>
+                  <th className="px-6 py-4 text-left rounded-tl-lg">{language === "de" ? "Leistung" : "Service"}</th>
                   <th className="px-6 py-4 text-left">{language === "de" ? "Preis" : "Price"}</th>
-                  <th className="px-6 py-4 text-left">{language === "de" ? "Details" : "Details"}</th>
+                  <th className="px-6 py-4 text-left rounded-tr-lg">{language === "de" ? "Details" : "Details"}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
