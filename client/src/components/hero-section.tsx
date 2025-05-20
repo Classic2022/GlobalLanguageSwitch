@@ -29,12 +29,9 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background with color instead of image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/services-collage.png')",
-        }}
+        className="absolute inset-0 bg-[#2F6D5C]"
       />
 
       {/* Dark Overlay for better text visibility */}

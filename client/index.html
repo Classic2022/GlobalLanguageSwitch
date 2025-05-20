@@ -10,6 +10,10 @@
     <meta property="og:description" content="Ihr zuverlässiger Dienstleistungspartner in Berlin, spezialisiert auf die Instandhaltung von Altbauwohnungen." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
+    <script>
+      // Fix for "process is not defined" error
+      window.process = { env: {} };
+    </script>
   </head>
   <body>
     <div id="root"></div>

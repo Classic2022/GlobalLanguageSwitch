@@ -7,9 +7,7 @@ import Home from "@/pages/home";
 import { queryClient } from "./lib/queryClient";
 import { LanguageProvider } from "@/context/language-context";
 
-// Define this globally to fix the "process is not defined" error
-// @ts-ignore
-window.process = { env: {} };
+
 
 function Router() {
   return (
