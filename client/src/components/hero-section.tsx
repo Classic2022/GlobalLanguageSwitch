@@ -64,9 +64,24 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <Button asChild size="lg" className="bg-white hover:bg-white/90 text-[#1A4D3C] font-medium px-8">
-          <Link href="#contact">{language === "de" ? "Jetzt Kontakt aufnehmen" : "Contact Us Now"}</Link>
-        </Button>
+        <button
+          onClick={() => {
+            const element = document.getElementById("contact")
+            if (element) {
+              const headerOffset = 80
+              const elementPosition = element.getBoundingClientRect().top
+              const offsetPosition = elementPosition + window.scrollY - headerOffset
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              })
+            }
+          }}
+          className="inline-flex h-12 items-center justify-center rounded-md bg-white px-8 text-lg font-medium text-[#1A4D3C] shadow-lg hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transform transition-all duration-200 hover:scale-[1.03] active:scale-95"
+        >
+          {language === "de" ? "Jetzt Kontakt aufnehmen" : "Contact Us Now"}
+        </button>
       </div>
     </section>
   )
