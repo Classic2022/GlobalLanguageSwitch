@@ -33,6 +33,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#prices" className="text-white/80 hover:text-white transition-colors">
+                  {language === "de" ? "Preise" : "Prices"}
+                </Link>
+              </li>
+              <li>
                 <Link href="#contact" className="text-white/80 hover:text-white transition-colors">
                   {language === "de" ? "Kontakt" : "Contact"}
                 </Link>
