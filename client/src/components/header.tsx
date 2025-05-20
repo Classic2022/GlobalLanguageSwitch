@@ -16,9 +16,11 @@ export default function Header() {
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center -ml-3">
           <Link href="/" className="flex items-center">
-            <div className="h-auto w-[196px] md:w-[224px] text-[#1A4D3C] font-bold text-xl">
-              Urban Reparaturen
-            </div>
+            <img 
+              src="/images/urban-logo.png" 
+              alt="Urban Reparaturen Logo" 
+              className="h-auto w-[196px] md:w-[224px]"
+            />
           </Link>
         </div>
 
@@ -32,6 +34,12 @@ export default function Header() {
             className="text-base font-medium text-[#2F2F2F] hover:text-[#1A4D3C] transition-colors"
           >
             {language === "de" ? "Leistungen" : "Services"}
+          </Link>
+          <Link
+            href="#prices"
+            className="text-base font-medium text-[#2F2F2F] hover:text-[#1A4D3C] transition-colors"
+          >
+            {language === "de" ? "Preise" : "Prices"}
           </Link>
           <Link href="#contact" className="text-base font-medium text-[#2F2F2F] hover:text-[#1A4D3C] transition-colors">
             {language === "de" ? "Kontakt" : "Contact"}
@@ -75,6 +83,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {language === "de" ? "Leistungen" : "Services"}
+            </Link>
+            <Link
+              href="#prices"
+              className="block text-base font-medium text-[#2F2F2F] hover:text-[#1A4D3C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {language === "de" ? "Preise" : "Prices"}
             </Link>
             <Link
               href="#contact"

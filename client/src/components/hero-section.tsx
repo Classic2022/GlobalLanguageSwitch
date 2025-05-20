@@ -29,20 +29,23 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background with color instead of image */}
+      {/* Background Image with Overlay */}
       <div
-        className="absolute inset-0 bg-[#2F6D5C]"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/old-building.jpg')",
+        }}
       />
 
       {/* Dark Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-[#1A4D3C]/75"></div>
+      <div className="absolute inset-0 bg-[#1A4D3C]/80"></div>
 
       {/* Content */}
       <div className="container relative z-10 text-center px-4 md:px-6">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
           {language === "de"
             ? "Ihr Partner für Altbaupflege in Berlin"
-            : "Your Trusted Partner for Historic Apartment Care in Berlin"}
+            : "Your Trusted Partner for Old Apartment Care in Berlin"}
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-6">
           {language === "de" ? "Kompetent · Effizient · Engagiert" : "Competent · Efficient · Committed"}

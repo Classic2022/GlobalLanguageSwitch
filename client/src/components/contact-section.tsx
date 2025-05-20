@@ -44,6 +44,36 @@ export default function ContactSection() {
                 />
               </div>
               <div>
+                <Input
+                  type="tel"
+                  placeholder={language === "de" ? "Telefon" : "Phone"}
+                  className="border-[#2F2F2F]/20"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-[#2F2F2F]">
+                  {language === "de" ? "Gewünschte Leistung" : "Service Required"}
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" className="rounded border-[#2F2F2F]/20" />
+                    <span className="text-sm">{language === "de" ? "Reparaturen" : "Repairs"}</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" className="rounded border-[#2F2F2F]/20" />
+                    <span className="text-sm">{language === "de" ? "Schlüsseldienst" : "Locksmith"}</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" className="rounded border-[#2F2F2F]/20" />
+                    <span className="text-sm">{language === "de" ? "Transporte" : "Transport"}</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" className="rounded border-[#2F2F2F]/20" />
+                    <span className="text-sm">{language === "de" ? "Möbelaufbau" : "Assembly"}</span>
+                  </label>
+                </div>
+              </div>
+              <div>
                 <Textarea
                   placeholder={language === "de" ? "Nachricht" : "Message"}
                   required
