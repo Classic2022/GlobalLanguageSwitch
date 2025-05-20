@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import Link from "../next-link"
 import { Button } from "@/components/ui/button"
 import { PenToolIcon as Tool, Key, Truck, Armchair } from "lucide-react"
 import { useLanguage } from "@/context/language-context"
