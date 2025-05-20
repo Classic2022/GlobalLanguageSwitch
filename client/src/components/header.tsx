@@ -16,14 +16,9 @@ export default function Header() {
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center -ml-3">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/images/urban-logo-new.png"
-              alt="Urban Reparaturen Logo"
-              width={350}
-              height={117}
-              className="h-auto w-[196px] md:w-[224px]"
-              priority
-            />
+            <div className="h-auto w-[196px] md:w-[224px] text-[#1A4D3C] font-bold text-xl">
+              Urban Reparaturen
+            </div>
           </Link>
         </div>
 

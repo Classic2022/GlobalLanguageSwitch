@@ -6,7 +6,10 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import { queryClient } from "./lib/queryClient";
 import { LanguageProvider } from "@/context/language-context";
-import { ThemeProvider } from "@/components/theme-provider";
+
+// Define this globally to fix the "process is not defined" error
+// @ts-ignore
+window.process = { env: {} };
 
 function Router() {
   return (
@@ -20,14 +23,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light" attribute="class" enableSystem={false} disableTransitionOnChange>
-        <LanguageProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-          </TooltipProvider>
-        </LanguageProvider>
-      </ThemeProvider>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
