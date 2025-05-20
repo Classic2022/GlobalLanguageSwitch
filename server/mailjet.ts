@@ -45,12 +45,12 @@ export async function sendContactNotification(data: EmailData): Promise<boolean>
       ${data.message}
     `;
 
-    // Send email
+    // Send email - using a verified sender address to avoid spam filters
     const response = await mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
         {
           From: {
-            Email: "noreply@urban-reparaturen.de",
+            Email: "adilsunil66@gmail.com", // Using the account email associated with Mailjet
             Name: "Urban Reparaturen Website"
           },
           To: [
@@ -60,7 +60,16 @@ export async function sendContactNotification(data: EmailData): Promise<boolean>
             }
           ],
           Subject: "New Contact Form Submission - Urban Reparaturen",
-          TextPart: emailContent
+          TextPart: emailContent,
+          // Adding HTML part for better email rendering
+          HTMLPart: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
+            <p><strong>Services:</strong> ${data.services && data.services.length > 0 ? data.services.join(', ') : 'None selected'}</p>
+            <p><strong>Message:</strong><br>${data.message.replace(/\n/g, '<br>')}</p>
+          `
         }
       ]
     });
