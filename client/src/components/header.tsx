@@ -150,10 +150,10 @@ export default function Header() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border/40 bg-background">
-          <div className="container py-4 space-y-3">
+          <div className="container px-4 mx-auto max-w-6xl py-4 space-y-3">
             <button
               onClick={() => handleNavClick("about")}
-              className={`block w-full text-left py-2 text-base font-medium transition-colors ${
+              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
                 activeSection === "about" 
                   ? "text-[#1A4D3C] font-semibold" 
                   : "text-[#2F2F2F] hover:text-[#1A4D3C]"
@@ -163,7 +163,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => handleNavClick("services")}
-              className={`block w-full text-left py-2 text-base font-medium transition-colors ${
+              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
                 activeSection === "services" 
                   ? "text-[#1A4D3C] font-semibold" 
                   : "text-[#2F2F2F] hover:text-[#1A4D3C]"
@@ -173,7 +173,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => handleNavClick("prices")}
-              className={`block w-full text-left py-2 text-base font-medium transition-colors ${
+              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
                 activeSection === "prices" 
                   ? "text-[#1A4D3C] font-semibold" 
                   : "text-[#2F2F2F] hover:text-[#1A4D3C]"
@@ -183,7 +183,7 @@ export default function Header() {
             </button>
             <button
               onClick={() => handleNavClick("contact")}
-              className={`block w-full text-left py-2 text-base font-medium transition-colors ${
+              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
                 activeSection === "contact" 
                   ? "text-[#1A4D3C] font-semibold" 
                   : "text-[#2F2F2F] hover:text-[#1A4D3C]"
@@ -191,10 +191,10 @@ export default function Header() {
             >
               {language === "de" ? "Kontakt" : "Contact"}
             </button>
-            <div className="pt-2 border-t border-border/40">
+            <div className="pt-3 mt-3 border-t border-border/40">
               <button 
                 onClick={toggleLanguage} 
-                className="text-base font-medium text-[#2F2F2F] hover:opacity-80 transition-opacity"
+                className="text-base font-medium text-[#2F2F2F] hover:opacity-80 transition-opacity px-2"
               >
                 <span className={language === "de" ? "font-bold text-[#1A4D3C]" : ""}>DE</span>
                 {" | "}
