@@ -116,16 +116,6 @@ export default function ServicesSection() {
               
               {/* Decorative corner accent */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#1A4D3C]/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Learn More indicator that appears on hover */}
-              <div className="absolute bottom-6 left-0 right-0 flex justify-center opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                <span className="text-[#1A4D3C] font-medium flex items-center">
-                  {language === "de" ? "Mehr erfahren" : "Learn more"}
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </span>
-              </div>
             </div>
           ))}
         </div>
