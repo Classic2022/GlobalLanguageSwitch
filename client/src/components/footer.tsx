@@ -19,7 +19,7 @@ export default function Footer() {
           {/* Logo & Info Section */}
           <div className="md:col-span-5 space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-2 tracking-wide">URBAN</h3>
+              <h3 className="text-2xl font-bold text-white mb-2 tracking-wide">URBAN REPARATUREN</h3>
               <p className="text-white/80 text-lg">
                 {language === "de" ? "Ihr Partner für Wohnungspflege in Berlin" : "Your partner for apartment care in Berlin"}
               </p>
