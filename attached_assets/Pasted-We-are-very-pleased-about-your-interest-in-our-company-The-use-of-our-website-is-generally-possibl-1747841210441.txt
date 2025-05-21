@@ -1,0 +1,58 @@
+We are very pleased about your interest in our company.
+
+The use of our website is generally possible without providing any personal data. However, if a data subject wants to use special services offered by our company via the website, the processing of personal data might become necessary. If the processing of personal data is required and there is no legal basis for such processing, we generally obtain the consent of the data subject.
+
+The processing of personal data—such as the name, address, email address, or telephone number of a data subject—is always carried out in accordance with the General Data Protection Regulation (GDPR) and in compliance with the country-specific data protection regulations applicable to us. With this privacy policy, our company would like to inform the public about the nature, scope, and purpose of the personal data we collect, use, and process. Furthermore, data subjects are informed of their rights through this privacy policy.
+
+As the controller responsible for processing, we have implemented numerous technical and organizational measures to ensure the most complete protection possible of the personal data processed via this website. Nevertheless, internet-based data transmissions can generally have security gaps, so absolute protection cannot be guaranteed. For this reason, every data subject is free to transmit personal data to us via alternative means, such as by telephone.
+
+Definitions
+
+This privacy policy is based on the terms used by the European legislator when enacting the General Data Protection Regulation (GDPR). Our privacy policy is intended to be easy to read and understand for the public, as well as for our customers and business partners. To ensure this, we would like to explain the terminology used in advance.
+
+Among others, we use the following terms in this privacy policy:
+
+a) Personal Data
+
+Personal data means any information relating to an identified or identifiable natural person (hereinafter referred to as “data subject”). A natural person is considered identifiable if they can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier, or one or more specific factors that express the physical, physiological, genetic, mental, economic, cultural, or social identity of that natural person.
+
+b) Data Subject
+
+A data subject is any identified or identifiable natural person whose personal data is processed by the controller responsible for the processing.
+
+Name and Address of the Controller
+
+The controller in the sense of the General Data Protection Regulation, other data protection laws applicable in the member states of the European Union, and other provisions of a data protection nature is:
+
+Urban Hausverwaltung UH GmbH
+Guy Ben Edelsburg
+Zähringerstr. 28
+10707 Berlin
+Germany
+Phone: 03086329180
+VAT ID: DE325004163
+
+Cookies / SessionStorage / LocalStorage
+
+Our websites use so-called cookies, LocalStorage, and SessionStorage. These technologies help make our services more user-friendly, effective, and secure. LocalStorage and SessionStorage allow your browser to store data on your computer or mobile device. Cookies are text files that are stored and saved on a computer system via an internet browser. You can disable the use of cookies, LocalStorage, and SessionStorage at any time via your browser settings and delete already stored data. Disabling them may, however, limit your ability to use all features of this website.
+
+Contact via the Website
+
+Due to legal requirements, our website contains information that enables quick electronic contact with our company, including a general address for electronic mail (email). If a data subject contacts the controller by email or through a contact form, the personal data transmitted by the data subject will be stored automatically. Such voluntarily transmitted personal data is stored for the purpose of processing or contacting the data subject. There is no transfer of this personal data to third parties.
+
+Routine Deletion and Blocking of Personal Data
+
+The controller processes and stores personal data of the data subject only for the period necessary to achieve the purpose of storage, or as far as this is granted by the European legislator or another legislator in laws or regulations to which the controller is subject.
+
+If the storage purpose no longer applies or if a storage period prescribed by the European legislator or another competent legislator expires, the personal data will be routinely blocked or deleted in accordance with legal requirements.
+
+Rights of the Data Subject
+
+a) Right to Confirmation
+
+Every data subject has the right to obtain confirmation from the controller as to whether personal data concerning them is being processed. If a data subject wishes to exercise this right, they may contact our data protection officer or another employee of the controller at any time.
+
+b) Right to Access
+
+Every data subject has the right to obtain free information at any time from the controller about the personal data stored about them and to receive a copy of this information.
+
