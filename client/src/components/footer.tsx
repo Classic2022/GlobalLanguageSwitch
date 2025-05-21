@@ -116,16 +116,17 @@ export default function Footer() {
               {language === "de" ? "Kontakt" : "Contact"}
             </h3>
             <address className="not-italic space-y-2 text-white/80">
-              <p>Musterstraße 123</p>
-              <p>10115 Berlin</p>
+              <p>Urban Reparaturen</p>
+              <p>Konstanzerstr. 54</p>
+              <p>10707 Berlin</p>
               <p>
-                <a href="mailto:info@urban-reparaturen.de" className="hover:text-white transition-colors">
-                  info@urban-reparaturen.de
+                <a href="mailto:info@urban-r.de" className="hover:text-white transition-colors">
+                  info@urban-r.de
                 </a>
               </p>
               <p>
-                <a href="tel:+4930123456789" className="hover:text-white transition-colors">
-                  +49 30 123456789
+                <a href="tel:+4917661613134" className="hover:text-white transition-colors">
+                  +49 176 61613134
                 </a>
               </p>
             </address>

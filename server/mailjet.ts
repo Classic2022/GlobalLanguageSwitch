@@ -55,7 +55,7 @@ export async function sendContactNotification(data: EmailData): Promise<boolean>
           },
           To: [
             {
-              Email: "info@digitalsolutionlab.com",
+              Email: "info@urban-r.de",
               Name: "Urban Reparaturen"
             }
           ],

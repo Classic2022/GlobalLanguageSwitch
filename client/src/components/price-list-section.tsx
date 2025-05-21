@@ -8,58 +8,100 @@ export default function PriceListSection() {
   const priceList = [
     {
       service: {
-        de: "Reparaturen & Instandhaltung",
-        en: "Repairs & Maintenance",
+        de: "Möbelmontage",
+        en: "Furniture Assembly",
       },
       price: {
-        de: "ab 50€/Stunde",
-        en: "from €50/hour",
+        de: "25–120 €",
+        en: "€25–€120",
       },
       details: {
-        de: "Kleine Reparaturen und Wartungsarbeiten",
-        en: "Small repairs and maintenance work",
+        de: "",
+        en: "",
       },
     },
     {
       service: {
-        de: "Schlüsseldienst",
-        en: "Locksmith Services",
+        de: "Installationen & Aufhängungen",
+        en: "Installations & Mounting",
       },
       price: {
-        de: "ab 80€",
-        en: "from €80",
+        de: "20–100 €",
+        en: "€20–€100",
       },
       details: {
-        de: "Türöffnungen und Schlossaustausch",
-        en: "Door openings and lock replacements",
+        de: "",
+        en: "",
       },
     },
     {
       service: {
-        de: "Kleintransporte & Umzüge",
-        en: "Mini Moves",
+        de: "Einfache Elektroarbeiten",
+        en: "Basic Electrical Work",
       },
       price: {
-        de: "ab 75€/Stunde",
-        en: "from €75/hour",
+        de: "30–120 €",
+        en: "€30–€120",
       },
       details: {
-        de: "Möbeltransport und kleine Umzüge",
-        en: "Furniture transport and small moves",
+        de: "",
+        en: "",
       },
     },
     {
       service: {
-        de: "Möbelaufbau",
-        en: "Assembly",
+        de: "Sanitärarbeiten",
+        en: "Plumbing Tasks",
       },
       price: {
-        de: "ab 45€/Stunde",
-        en: "from €45/hour",
+        de: "50–150 €",
+        en: "€50–€150",
       },
       details: {
-        de: "Montage von Möbeln und Haushaltsgeräten",
-        en: "Furniture and appliance setup",
+        de: "",
+        en: "",
+      },
+    },
+    {
+      service: {
+        de: "Malerarbeiten & Wandreparaturen",
+        en: "Painting & Wall Repairs",
+      },
+      price: {
+        de: "20–300 €",
+        en: "€20–€300",
+      },
+      details: {
+        de: "",
+        en: "",
+      },
+    },
+    {
+      service: {
+        de: "Schlossaustausch",
+        en: "Lock Replacement",
+      },
+      price: {
+        de: "70–150 €",
+        en: "€70–€150",
+      },
+      details: {
+        de: "",
+        en: "",
+      },
+    },
+    {
+      service: {
+        de: "Weitere Leistungen (Transport, Demontage, Wartung)",
+        en: "Other Services (Moving, Dismantling, Maintenance)",
+      },
+      price: {
+        de: "20–100 €",
+        en: "€20–€100",
+      },
+      details: {
+        de: "",
+        en: "",
       },
     },
   ]
@@ -77,8 +119,7 @@ export default function PriceListSection() {
               <thead>
                 <tr className="bg-[#1A4D3C] text-white">
                   <th className="px-6 py-4 text-left rounded-tl-lg">{language === "de" ? "Leistung" : "Service"}</th>
-                  <th className="px-6 py-4 text-left">{language === "de" ? "Preis" : "Price"}</th>
-                  <th className="px-6 py-4 text-left rounded-tr-lg">{language === "de" ? "Details" : "Details"}</th>
+                  <th className="px-6 py-4 text-left rounded-tr-lg">{language === "de" ? "Preis" : "Price"}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -89,9 +130,6 @@ export default function PriceListSection() {
                     </td>
                     <td className="px-6 py-4 text-[#1A4D3C] font-medium">
                       {language === "de" ? item.price.de : item.price.en}
-                    </td>
-                    <td className="px-6 py-4 text-[#2F2F2F]/80">
-                      {language === "de" ? item.details.de : item.details.en}
                     </td>
                   </tr>
                 ))}
