@@ -136,12 +136,12 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-white/80 hover:text-white transition-colors">
+                <Link href="/impressum" className="text-white/80 hover:text-white transition-colors">
                   {language === "de" ? "Impressum" : "Imprint"}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-white/80 hover:text-white transition-colors">
+                <Link href="/datenschutz" className="text-white/80 hover:text-white transition-colors">
                   {language === "de" ? "Datenschutz" : "Privacy Policy"}
                 </Link>
               </li>
