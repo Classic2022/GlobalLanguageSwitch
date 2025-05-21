@@ -33,7 +33,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/old-building.jpg')",
+          backgroundImage: "url('/images/hero-apartment-service.png')",
         }}
       />
 
@@ -44,8 +44,8 @@ export default function HeroSection() {
       <div className="container relative z-10 text-center px-4 mx-auto max-w-6xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
           {language === "de"
-            ? "Ihr Partner für Altbaupflege in Berlin"
-            : "Your Trusted Partner for Old Apartment Care in Berlin"}
+            ? "Ihr Partner für die Instandhaltung aller Arten von Wohnungen in Berlin"
+            : "Your Trusted Partner for All Types of Apartment Care in Berlin"}
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-6">
           {language === "de" ? "Kompetent · Effizient · Engagiert" : "Competent · Efficient · Committed"}

@@ -15,17 +15,27 @@ export default function AboutSection() {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
+              <p className="text-lg text-[#2F2F2F]/80 leading-relaxed mb-4">
+                {language === "de"
+                  ? "Wir sind Ihr zuverlässiger Servicepartner in Berlin und auf die umfassende Instandhaltung von Wohnungen spezialisiert."
+                  : "We are your reliable service partner in Berlin and specialize in comprehensive apartment maintenance."}
+              </p>
               <p className="text-lg text-[#2F2F2F]/80 leading-relaxed">
                 {language === "de"
-                  ? "Wir sind Ihr zuverlässiger Dienstleistungspartner in Berlin, spezialisiert auf die ganzheitliche Instandhaltung von Altbauwohnungen."
-                  : "We are your reliable service partner in Berlin, specializing in the comprehensive maintenance of old apartments."}
+                  ? "Wir übernehmen alle Aufgaben rund um die Pflege und Instandhaltung Ihrer Wohnung: von fachgerechten Reparaturen durch erfahrene Handwerker über Schlüsseldienste und kleinere Umzüge bis hin zur Montage von Möbeln und Haushaltsgegenständen."
+                  : "We handle all tasks related to the care and maintenance of your apartment: from professional repairs by experienced craftsmen to locksmith services and minor moves to the assembly of furniture and household items."}
               </p>
             </div>
             <div className="bg-[#F8F8F8] p-8 rounded-lg shadow-sm">
+              <p className="text-lg text-[#2F2F2F]/80 leading-relaxed mb-4">
+                {language === "de"
+                  ? "Urban Reparaturen - kompetent, effizient und engagiert."
+                  : "Urban repairs - competent, efficient, and committed."}
+              </p>
               <p className="text-lg text-[#2F2F2F]/80 leading-relaxed">
                 {language === "de"
-                  ? "Mit unserem erfahrenen Team bieten wir maßgeschneiderte Lösungen für die besonderen Anforderungen historischer Gebäude. Wir verstehen die Bedeutung von Qualität und Zuverlässigkeit bei der Pflege Ihres wertvollen Wohnraums."
-                  : "With our experienced team, we offer tailored solutions for the special requirements of historic buildings. We understand the importance of quality and reliability in maintaining your valuable living space."}
+                  ? "Damit Ihre Immobilie stets in bestem Zustand bleibt."
+                  : "So that your property always remains in top condition."}
               </p>
             </div>
           </div>
