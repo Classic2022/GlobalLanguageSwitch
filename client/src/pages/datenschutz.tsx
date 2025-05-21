@@ -35,7 +35,9 @@ export default function Datenschutz() {
           
           <div className="prose max-w-none text-[#2F2F2F]/80">
             <p className="font-medium">
-              {language === "de" ? "Stand: 21.05.2025" : "Version: May 21, 2025"}
+              {language === "de" 
+                ? `Stand: ${new Date().toLocaleDateString('de-DE')}`
+                : `Version: ${new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}`}
             </p>
             
             {language === "de" ? (
