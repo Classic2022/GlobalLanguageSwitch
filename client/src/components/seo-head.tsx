@@ -46,6 +46,9 @@ export default function SEOHead({ metadata }: { metadata: SEOMetadata }) {
       
       {/* Language meta tag */}
       <meta httpEquiv="content-language" content={language} />
+      
+      {/* Favicon */}
+      <link rel="icon" href="/images/favicon.png" type="image/png" />
     </Helmet>
   )
 }
