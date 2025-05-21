@@ -212,7 +212,9 @@ $message
     if ($mail_sent) {
         echo json_encode([
             'success' => true,
-            'message' => 'Message received successfully. You will be contacted shortly.'
+            'message' => (strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], 'de') !== false) ? 
+                'Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze mit Ihnen in Verbindung setzen.' : 
+                'Thank you for your message. We will contact you shortly.'
         ]);
     } else {
         // Log the error for troubleshooting
@@ -220,7 +222,9 @@ $message
         
         echo json_encode([
             'success' => false,
-            'message' => 'There was an error sending your message. Please try again later.'
+            'message' => (strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], 'de') !== false) ? 
+                'Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.' : 
+                'There was an error sending your message. Please try again later.'
         ]);
     }
     
