@@ -225,7 +225,7 @@ export default function ContactSection() {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-[#1A4D3C] hover:bg-[#1A4D3C]/90 text-white py-6 h-auto text-lg rounded-lg transition-all duration-200 hover:scale-[1.02]"
+                  className="w-full bg-[#1A4D3C] hover:bg-[#1A4D3C]/90 text-white py-6 h-auto text-lg rounded-lg transition-all duration-200 hover:scale-[1.02] cta-glow"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

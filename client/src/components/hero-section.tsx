@@ -94,7 +94,7 @@ export default function HeroSection() {
               })
             }
           }}
-          className="inline-flex h-14 items-center justify-center rounded-lg bg-white px-10 text-lg font-medium text-[#1A4D3C] shadow-xl hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transform transition-all duration-300 hover:scale-[1.05] active:scale-95"
+          className="inline-flex h-14 items-center justify-center rounded-lg bg-white px-10 text-lg font-medium text-[#1A4D3C] shadow-xl hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transform transition-all duration-300 hover:scale-[1.05] active:scale-95 cta-glow"
         >
           {language === "de" ? "Jetzt Kontakt aufnehmen" : "Contact Us Now"}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

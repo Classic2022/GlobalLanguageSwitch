@@ -136,7 +136,7 @@ export default function WhyUsSection() {
                 });
               }
             }}
-            className="inline-flex items-center justify-center bg-[#1A4D3C] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1A4D3C]/90 transition-colors duration-300"
+            className="inline-flex items-center justify-center bg-[#1A4D3C] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1A4D3C]/90 transition-colors duration-300 cta-glow"
           >
             {language === "de" ? "Kontaktieren Sie uns" : "Contact Us"}
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

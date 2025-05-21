@@ -141,7 +141,7 @@ export default function ServicesSection() {
                 });
               }
             }}
-            className="inline-flex items-center justify-center bg-[#1A4D3C] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1A4D3C]/90 transition-colors duration-300"
+            className="inline-flex items-center justify-center bg-[#1A4D3C] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1A4D3C]/90 transition-colors duration-300 cta-glow"
           >
             {language === "de" ? "Kontaktieren Sie uns" : "Contact us"}
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
