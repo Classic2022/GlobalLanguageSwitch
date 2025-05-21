@@ -65,13 +65,23 @@ export default function Header() {
     } backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300`}>
       <div className="container flex h-20 items-center justify-between px-4 mx-auto max-w-6xl">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+              });
+            }}
+            className="flex items-center cursor-pointer"
+          >
             <img 
               src="/images/urban-logo.png" 
               alt="Urban Reparaturen Logo" 
               className="h-auto w-[126px] md:w-[140px]"
             />
-          </Link>
+          </a>
         </div>
 
         {/* Desktop Navigation */}
