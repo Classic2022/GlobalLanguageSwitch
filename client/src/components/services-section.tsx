@@ -78,15 +78,20 @@ export default function ServicesSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center h-full">
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-[#2F2F2F] mb-3">
+            <div 
+              key={index} 
+              className="group bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center h-full
+                        transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 hover:border-[#1A4D3C]/20 border border-transparent
+                        cursor-pointer"
+            >
+              <div className="mb-4 transition-transform duration-300 group-hover:scale-110">{service.icon}</div>
+              <h3 className="text-xl font-bold text-[#2F2F2F] mb-3 transition-colors duration-300 group-hover:text-[#1A4D3C]">
                 {language === "de" ? service.title.de : service.title.en}
               </h3>
-              <p className="text-[#2F2F2F]/80 mb-2">
+              <p className="text-[#2F2F2F]/80 mb-2 transition-colors duration-300 group-hover:text-[#2F2F2F]">
                 {language === "de" ? service.description.de : service.description.en}
               </p>
-              <p className="text-[#2F2F2F]/80">
+              <p className="text-[#2F2F2F]/80 transition-colors duration-300 group-hover:text-[#2F2F2F]">
                 {language === "de" ? service.subDescription.de : service.subDescription.en}
               </p>
             </div>
