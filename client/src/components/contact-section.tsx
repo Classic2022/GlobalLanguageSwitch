@@ -220,36 +220,31 @@ export default function ContactSection() {
           {/* Contact Information */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-[#2F2F2F] mb-2">Guy Ben Edelsburg</h3>
+              <h3 className="text-xl font-bold text-[#2F2F2F] mb-2">Urban Reparaturen</h3>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-[#1A4D3C] mr-3" />
-                <a href="tel:+491629621516" className="text-[#2F2F2F]/80 hover:text-[#1A4D3C]">
-                  +49 162 9621516
+                <a href="tel:+4917661613134" className="text-[#2F2F2F]/80 hover:text-[#1A4D3C]">
+                  +49 176 61613134
                 </a>
               </div>
 
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-[#1A4D3C] mr-3" />
-                <a href="mailto:guy@urban-hausverwaltung.de" className="text-[#2F2F2F]/80 hover:text-[#1A4D3C]">
-                  guy@urban-hausverwaltung.de
+                <a href="mailto:info@urban-r.de" className="text-[#2F2F2F]/80 hover:text-[#1A4D3C]">
+                  info@urban-r.de
                 </a>
               </div>
 
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-[#1A4D3C] mr-3 mt-0.5" />
-                <span className="text-[#2F2F2F]/80">Berlin, Germany</span>
+                <div className="text-[#2F2F2F]/80">
+                  <p>Konstanzerstr. 54</p>
+                  <p>10707 Berlin</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="pt-6 mt-6 border-t border-[#2F2F2F]/10">
-              <p className="text-[#2F2F2F]/70 text-sm">
-                {language === "de" 
-                  ? "Alle Anfragen werden an info@digitalsolutionlab.com weitergeleitet."
-                  : "All inquiries will be forwarded to info@digitalsolutionlab.com."}
-              </p>
             </div>
           </div>
         </div>
