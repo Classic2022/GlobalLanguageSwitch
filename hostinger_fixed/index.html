@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Urban Reparaturen - Ihr Partner für Altbaupflege in Berlin</title>
+    <meta name="description" content="Ihr zuverlässiger Dienstleistungspartner in Berlin, spezialisiert auf die ganzheitliche Instandhaltung von Altbauwohnungen." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Urban Reparaturen - Altbaupflege in Berlin" />
+    <meta property="og:description" content="Ihr zuverlässiger Dienstleistungspartner in Berlin, spezialisiert auf die Instandhaltung von Altbauwohnungen." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <script>
+      // Fix for "process is not defined" error
+      window.process = { env: {} };
+    </script>
+    <script type="module" crossorigin src="/assets/index-B2WAMbG-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CBgvKJyI.css">
+    <!-- Button Highlight Effect CSS -->
+    <link rel="stylesheet" href="/assets/button-highlight.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Contact Form Handler Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // This will be executed after the React app loads and renders
+        // It will attach a form submission handler to the contact form
+        setTimeout(function() {
+          // Find the form regardless of its action attribute
+          const contactForm = document.querySelector('form');
+          
+          if (contactForm) {
+            // First update the form action attribute
+            contactForm.setAttribute('action', '/form-handler.php');
+            
+            // Then add the event listener
+            contactForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const formData = new FormData(this);
+              
+              // Display loading state
+              const submitButton = this.querySelector('button[type="submit"]');
+              if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...';
+              }
+              
+              fetch('/form-handler.php', {
+                method: 'POST',
+                body: formData
+              })
+              .then(response => response.json())
+              .then(data => {
+                // Handle form submission response
+                if (data.success) {
+                  // Show success message
+                  const formContainer = contactForm.closest('.bg-white');
+                  if (formContainer) {
+                    formContainer.innerHTML = `
+                      <div class="text-center py-8">
+                        <div class="bg-green-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 border-4 border-green-100">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-green-500">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                          </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#2F2F2F] mb-3">
+                          ${document.documentElement.lang === 'de' ? 'Nachricht gesendet!' : 'Message Sent!'}
+                        </h3>
+                        <p class="text-[#2F2F2F]/80 mb-8 text-lg">
+                          ${document.documentElement.lang === 'de' ? 'Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze mit Ihnen in Verbindung setzen.' : 'Thank you for your message. We will contact you shortly.'}
+                        </p>
+                        <button 
+                          onclick="window.location.reload()"
+                          class="bg-[#1A4D3C] hover:bg-[#1A4D3C]/90 text-white px-8 py-6 h-auto text-lg rounded-lg transition-all duration-200 hover:scale-105"
+                        >
+                          ${document.documentElement.lang === 'de' ? 'Neues Formular' : 'New Form'}
+                        </button>
+                      </div>
+                    `;
+                  }
+                } else {
+                  // Show error message
+                  const errorContainer = document.createElement('div');
+                  errorContainer.className = 'bg-red-50 text-red-600 p-4 rounded-lg flex items-start border border-red-100';
+                  errorContainer.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-3 mt-0.5 flex-shrink-0">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="15" y1="9" x2="9" y2="15"></line>
+                      <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                    <p class="text-sm">${data.message || 'There was a problem sending your message. Please try again later.'}</p>
+                  `;
+                  
+                  const submitButtonContainer = submitButton.parentNode;
+                  if (submitButtonContainer) {
+                    submitButtonContainer.insertBefore(errorContainer, submitButton);
+                  }
+                  
+                  // Re-enable submit button
+                  submitButton.disabled = false;
+                  submitButton.innerHTML = `<span class="font-medium">${document.documentElement.lang === 'de' ? 'Nachricht senden' : 'Send Message'}</span>`;
+                }
+              })
+              .catch(error => {
+                console.error('Error submitting form:', error);
+                
+                // Show error message
+                const errorContainer = document.createElement('div');
+                errorContainer.className = 'bg-red-50 text-red-600 p-4 rounded-lg flex items-start border border-red-100';
+                errorContainer.innerHTML = `
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-3 mt-0.5 flex-shrink-0">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                  </svg>
+                  <p class="text-sm">${document.documentElement.lang === 'de' ? 'Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.' : 'There was a problem sending your message. Please try again later.'}</p>
+                `;
+                
+                const submitButtonContainer = submitButton.parentNode;
+                if (submitButtonContainer) {
+                  submitButtonContainer.insertBefore(errorContainer, submitButton);
+                }
+                
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = `<span class="font-medium">${document.documentElement.lang === 'de' ? 'Nachricht senden' : 'Send Message'}</span>`;
+              });
+            });
+          }
+        }, 2000); // Wait for React to render
+      });
+    </script>
+  </body>
+</html>
