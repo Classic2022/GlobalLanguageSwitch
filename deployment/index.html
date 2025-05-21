@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Reparaturen - Deployment Instructions</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #1A4D3C;
+      border-bottom: 2px solid #1A4D3C;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #1A4D3C;
+      margin-top: 30px;
+    }
+    .instructions {
+      background-color: #f9f9f9;
+      border-left: 4px solid #1A4D3C;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    .file-structure {
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre;
+    }
+    .note {
+      background-color: #fffde7;
+      border-left: 4px solid #ffd600;
+      padding: 15px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Urban Reparaturen - Hostinger Deployment Package</h1>
+  
+  <p>This folder contains all the files you need to deploy your Urban Reparaturen website to Hostinger.</p>
+  
+  <h2>Included Files</h2>
+  
+  <div class="file-structure">
+hostinger_upload/
+├── .htaccess           # Server configuration for routing, caching, etc.
+├── form-handler.php    # PHP script to handle contact form submissions
+├── robots.txt          # Instructions for search engine crawlers
+├── sitemap.xml         # XML sitemap for better SEO
+└── index.html          # This instruction file
+  </div>
+  
+  <h2>Deployment Instructions</h2>
+  
+  <div class="instructions">
+    <ol>
+      <li>Run <code>npm run build</code> locally to generate your static site files</li>
+      <li>Log into your Hostinger control panel</li>
+      <li>Navigate to File Manager (or use FTP)</li>
+      <li>Go to your domain's <code>public_html</code> folder</li>
+      <li>Upload all the files from this folder to the <code>public_html</code> directory</li>
+      <li>Upload all files from your local <code>dist/public</code> directory to the same location</li>
+      <li>Ensure that you've replaced this <code>index.html</code> with the one from your build</li>
+    </ol>
+  </div>
+  
+  <h2>Contact Form Setup</h2>
+  
+  <p>The <code>form-handler.php</code> file is configured to:</p>
+  <ul>
+    <li>Receive form submissions from your contact form</li>
+    <li>Process and validate the data</li>
+    <li>Send an email notification to <code>info@urban-r.de</code></li>
+    <li>Return a JSON response that your form can display to users</li>
+  </ul>
+  
+  <div class="note">
+    <strong>Note:</strong> If your contact form isn't working after deployment, make sure that:
+    <ul>
+      <li>PHP is enabled on your Hostinger account (it should be by default)</li>
+      <li>Your form is correctly submitting to <code>/form-handler.php</code></li>
+      <li>The email address in the PHP file is correct</li>
+    </ul>
+  </div>
+  
+  <h2>Final Testing</h2>
+  
+  <p>After uploading all files, make sure to test:</p>
+  <ul>
+    <li>Navigation between all pages</li>
+    <li>The contact form submission process</li>
+    <li>Mobile responsiveness</li>
+    <li>That the favicon appears correctly</li>
+  </ul>
+</body>
+</html>
