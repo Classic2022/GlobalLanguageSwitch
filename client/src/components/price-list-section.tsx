@@ -139,8 +139,8 @@ export default function PriceListSection() {
           
           <p className="mt-6 text-sm text-[#2F2F2F]/70 text-center">
             {language === "de" 
-              ? "* Alle Preise sind Richtwerte und können je nach Umfang und Komplexität variieren. Kontaktieren Sie uns für ein individuelles Angebot."
-              : "* All prices are indicative and may vary depending on scope and complexity. Contact us for an individual quote."}
+              ? "*Die Preise verstehen sich exkl. MwSt. und können je nach Umfang und Standort der Arbeiten variieren."
+              : "*Prices do not include VAT and may vary depending on the complexity and location of the work."}
           </p>
         </div>
       </div>
