@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://urban-r.de/sitemap.xml
