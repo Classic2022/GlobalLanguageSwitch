@@ -69,7 +69,7 @@ export default function Header() {
             <img 
               src="/images/urban-logo.png" 
               alt="Urban Reparaturen Logo" 
-              className="h-auto w-[180px] md:w-[200px]"
+              className="h-auto w-[126px] md:w-[140px]"
             />
           </Link>
         </div>
