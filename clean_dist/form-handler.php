@@ -42,36 +42,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Format services for email
     $services_text = empty($services) 
-        ? 'No services selected' 
-        : 'Selected Services: ' . implode(', ', $services);
+        ? 'Keine Leistungen ausgewählt' 
+        : 'Gewünschte Leistungen: ' . implode(', ', $services);
     
     // Email recipient - the company email
     $to = "info@urban-r.de";
     
     // Email subject
-    $subject = "New Contact Form Submission - Urban Reparaturen";
+    $subject = "Neue Kontaktanfrage - Urban Reparaturen";
     
     // Email message content (plain text)
     $email_content = "
-New contact form submission from Urban Reparaturen website:
+Neue Kontaktanfrage von der Urban Reparaturen Webseite:
 
 Name: $name
 Email: $email
-Phone: " . ($phone ?: 'Not provided') . "
+Telefon: " . ($phone ?: 'Nicht angegeben') . "
 $services_text
 
-Message:
+Nachricht:
 $message
 ";
     
     // HTML email content
     $html_content = "
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='de'>
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>New Contact Form Submission</title>
+  <title>Neue Kontaktanfrage - Urban Reparaturen</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -146,10 +146,10 @@ $message
 <body>
   <div class='container'>
     <div class='header'>
-      <h1>New Inquiry from Urban Reparaturen Website</h1>
+      <h1>Neue Kontaktanfrage - Urban Reparaturen</h1>
     </div>
     
-    <p>You have received a new contact form submission from the website. Here are the details:</p>
+    <p>Sie haben eine neue Kontaktanfrage über die Webseite erhalten. Hier sind die Details:</p>
     
     <div class='info-box'>
       <div class='field'>
@@ -163,12 +163,12 @@ $message
       </div>
       
       <div class='field'>
-        <div class='field-name'>Phone:</div>
-        <div class='field-value'>" . htmlspecialchars($phone ?: 'Not provided') . "</div>
+        <div class='field-name'>Telefon:</div>
+        <div class='field-value'>" . htmlspecialchars($phone ?: 'Nicht angegeben') . "</div>
       </div>
       
       <div class='field'>
-        <div class='field-name'>Services Requested:</div>
+        <div class='field-name'>Gewünschte Leistungen:</div>
         <div class='field-value'>";
         
     if (!empty($services)) {
@@ -176,7 +176,7 @@ $message
             $html_content .= "<span class='service-tag'>" . htmlspecialchars($service) . "</span> ";
         }
     } else {
-        $html_content .= "None selected";
+        $html_content .= "Keine Leistungen ausgewählt";
     }
         
     $html_content .= "
@@ -185,14 +185,14 @@ $message
     </div>
     
     <div class='field'>
-      <div class='field-name'>Message:</div>
+      <div class='field-name'>Nachricht:</div>
       <div class='message-box'>
         " . nl2br(htmlspecialchars($message)) . "
       </div>
     </div>
     
     <div class='footer'>
-      <p>© " . date('Y') . " Urban Reparaturen | This is an automated message from your website contact form.</p>
+      <p>© " . date('Y') . " Urban Reparaturen | Dies ist eine automatische Nachricht von Ihrem Website-Kontaktformular.</p>
     </div>
   </div>
 </body>
@@ -202,7 +202,7 @@ $message
     // Email headers
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: website@urban-r.de" . "\r\n"; // Set a from address from your domain
+    $headers .= "From: request@urban-r.de" . "\r\n"; // Set the from address
     $headers .= "Reply-To: " . $email . "\r\n";
     
     // Send email
