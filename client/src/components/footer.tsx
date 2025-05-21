@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Urban Reparaturen</h3>
             <p className="text-white/80">
-              {language === "de" ? "Ihr Partner für Altbaupflege in Berlin" : "Your partner for old apartment care in Berlin"}
+              {language === "de" ? "Ihr Partner für Wohnungspflege in Berlin" : "Your partner for apartment care in Berlin"}
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
