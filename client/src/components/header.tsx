@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Link from "../next-link"
 import Image from "./next-image"
 import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/context/language-context"
 
 export default function Header() {
@@ -60,10 +59,12 @@ export default function Header() {
   }
 
   return (
-    <header className={`sticky top-0 z-50 w-full border-b border-border/40 ${
-      scrolled ? "bg-background/95 shadow-sm" : "bg-background"
-    } backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300`}>
-      <div className="container flex h-20 items-center justify-between px-4 mx-auto max-w-6xl">
+    <header className={`sticky top-0 z-50 w-full ${
+      scrolled 
+        ? "bg-white/95 border-b border-[#E0E0E0] shadow-lg" 
+        : "bg-transparent"
+    } backdrop-blur-md transition-all duration-300`}>
+      <div className="container flex h-24 items-center justify-between px-6 mx-auto max-w-6xl">
         <div className="flex items-center">
           <a 
             href="#" 
@@ -74,142 +75,104 @@ export default function Header() {
                 behavior: "smooth"
               });
             }}
-            className="flex items-center cursor-pointer"
+            className="flex items-center cursor-pointer transform transition-all duration-300 hover:opacity-90"
           >
             <img 
               src="/images/urban-logo.png" 
               alt="Urban Reparaturen Logo" 
-              className="h-auto w-[126px] md:w-[140px]"
+              className="h-auto w-[130px] md:w-[150px]"
             />
           </a>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <button 
-            onClick={() => handleNavClick("about")}
-            className={`text-base font-medium transition-colors ${
-              activeSection === "about" 
-                ? "text-[#1A4D3C] font-semibold" 
-                : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-            }`}
-            aria-label={language === "de" ? "Zu Über uns scrollen" : "Scroll to About section"}
-          >
-            {language === "de" ? "Über uns" : "About"}
-          </button>
-          <button 
-            onClick={() => handleNavClick("services")}
-            className={`text-base font-medium transition-colors ${
-              activeSection === "services" 
-                ? "text-[#1A4D3C] font-semibold" 
-                : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-            }`}
-            aria-label={language === "de" ? "Zu Leistungen scrollen" : "Scroll to Services section"}
-          >
-            {language === "de" ? "Leistungen" : "Services"}
-          </button>
-          <button 
-            onClick={() => handleNavClick("prices")}
-            className={`text-base font-medium transition-colors ${
-              activeSection === "prices" 
-                ? "text-[#1A4D3C] font-semibold" 
-                : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-            }`}
-            aria-label={language === "de" ? "Zu Preise scrollen" : "Scroll to Prices section"}
-          >
-            {language === "de" ? "Preise" : "Prices"}
-          </button>
-          <button 
-            onClick={() => handleNavClick("contact")}
-            className={`text-base font-medium transition-colors ${
-              activeSection === "contact" 
-                ? "text-[#1A4D3C] font-semibold" 
-                : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-            }`}
-            aria-label={language === "de" ? "Zu Kontakt scrollen" : "Scroll to Contact section"}
-          >
-            {language === "de" ? "Kontakt" : "Contact"}
-          </button>
-          <div className="ml-4 flex items-center">
+        <nav className="hidden md:flex items-center gap-8">
+          {[
+            { id: "about", labelDe: "Über uns", labelEn: "About" },
+            { id: "services", labelDe: "Leistungen", labelEn: "Services" },
+            { id: "prices", labelDe: "Preise", labelEn: "Prices" },
+            { id: "contact", labelDe: "Kontakt", labelEn: "Contact" }
+          ].map((item) => (
+            <button 
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`relative text-base font-medium transition-all ${
+                activeSection === item.id 
+                  ? "text-[#1A4D3C]" 
+                  : "text-[#2F2F2F] hover:text-[#1A4D3C]"
+              } tracking-wide`}
+              aria-label={language === "de" ? `Zu ${item.labelDe} scrollen` : `Scroll to ${item.labelEn} section`}
+            >
+              {language === "de" ? item.labelDe : item.labelEn}
+              {activeSection === item.id && (
+                <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-[#1A4D3C] rounded-full"></span>
+              )}
+            </button>
+          ))}
+          
+          <div className="ml-6 h-8 border-l border-[#E0E0E0] pl-6 flex items-center">
             <button 
               onClick={toggleLanguage} 
-              className="text-base font-medium text-[#2F2F2F] hover:opacity-80 transition-opacity"
+              className="inline-flex items-center justify-center bg-[#F5F5F5] px-3 py-1.5 rounded-md text-sm font-medium hover:bg-[#EBEBEB] transition-all duration-200"
               aria-label={language === "de" ? "Switch to English" : "Zu Deutsch wechseln"}
             >
-              <span className={language === "de" ? "font-bold text-[#1A4D3C]" : ""}>DE</span>
-              {" | "}
-              <span className={language === "en" ? "font-bold text-[#1A4D3C]" : ""}>EN</span>
+              <span className={language === "de" ? "font-semibold text-[#1A4D3C]" : "text-[#2F2F2F]"}>DE</span>
+              <span className="mx-1 text-[#B0B0B0]">|</span>
+              <span className={language === "en" ? "font-semibold text-[#1A4D3C]" : "text-[#2F2F2F]"}>EN</span>
             </button>
           </div>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
-            className="hover:bg-transparent"
+            className="p-2 rounded-md bg-[#F5F5F5] hover:bg-[#EBEBEB] transition-colors duration-200"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6 text-[#1A4D3C]" />
+            ) : (
+              <Menu className="h-6 w-6 text-[#1A4D3C]" />
+            )}
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border/40 bg-background">
-          <div className="container px-4 mx-auto max-w-6xl py-4 space-y-3">
-            <button
-              onClick={() => handleNavClick("about")}
-              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
-                activeSection === "about" 
-                  ? "text-[#1A4D3C] font-semibold" 
-                  : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-              }`}
-            >
-              {language === "de" ? "Über uns" : "About"}
-            </button>
-            <button
-              onClick={() => handleNavClick("services")}
-              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
-                activeSection === "services" 
-                  ? "text-[#1A4D3C] font-semibold" 
-                  : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-              }`}
-            >
-              {language === "de" ? "Leistungen" : "Services"}
-            </button>
-            <button
-              onClick={() => handleNavClick("prices")}
-              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
-                activeSection === "prices" 
-                  ? "text-[#1A4D3C] font-semibold" 
-                  : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-              }`}
-            >
-              {language === "de" ? "Preise" : "Prices"}
-            </button>
-            <button
-              onClick={() => handleNavClick("contact")}
-              className={`block w-full text-left px-2 py-3 text-base font-medium transition-colors ${
-                activeSection === "contact" 
-                  ? "text-[#1A4D3C] font-semibold" 
-                  : "text-[#2F2F2F] hover:text-[#1A4D3C]"
-              }`}
-            >
-              {language === "de" ? "Kontakt" : "Contact"}
-            </button>
-            <div className="pt-3 mt-3 border-t border-border/40">
-              <button 
-                onClick={toggleLanguage} 
-                className="text-base font-medium text-[#2F2F2F] hover:opacity-80 transition-opacity px-2"
+        <div className="md:hidden bg-white border-t border-[#E0E0E0] shadow-lg">
+          <div className="container px-6 mx-auto max-w-6xl py-6 space-y-1">
+            {[
+              { id: "about", labelDe: "Über uns", labelEn: "About" },
+              { id: "services", labelDe: "Leistungen", labelEn: "Services" },
+              { id: "prices", labelDe: "Preise", labelEn: "Prices" },
+              { id: "contact", labelDe: "Kontakt", labelEn: "Contact" }
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`block w-full text-left px-4 py-4 rounded-lg text-base font-medium transition-all ${
+                  activeSection === item.id 
+                    ? "bg-[#F5F5F5] text-[#1A4D3C]" 
+                    : "text-[#2F2F2F] hover:bg-[#F5F5F5]"
+                }`}
               >
-                <span className={language === "de" ? "font-bold text-[#1A4D3C]" : ""}>DE</span>
-                {" | "}
-                <span className={language === "en" ? "font-bold text-[#1A4D3C]" : ""}>EN</span>
+                {language === "de" ? item.labelDe : item.labelEn}
               </button>
+            ))}
+            
+            <div className="pt-4 mt-4 border-t border-[#E0E0E0]">
+              <div className="px-4">
+                <button 
+                  onClick={toggleLanguage} 
+                  className="inline-flex w-full items-center justify-center bg-[#F5F5F5] px-4 py-3 rounded-lg text-sm font-medium hover:bg-[#EBEBEB] transition-all duration-200"
+                >
+                  <span className={language === "de" ? "font-semibold text-[#1A4D3C]" : "text-[#2F2F2F]"}>DE</span>
+                  <span className="mx-2 text-[#B0B0B0]">|</span>
+                  <span className={language === "en" ? "font-semibold text-[#1A4D3C]" : "text-[#2F2F2F]"}>EN</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
