@@ -141,10 +141,11 @@ export default function ContactSection() {
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="form-handler.php" method="POST" onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Input
                     ref={nameRef}
+                    name="name"
                     type="text"
                     placeholder={language === "de" ? "Name" : "Name"}
                     required
