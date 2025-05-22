@@ -67,21 +67,23 @@ export default function ContactSection() {
       return
     }
     
-    // Submit form
+    // Set up form data
+    setIsSubmitting(true)
+    
+    // Get the form element
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+    
     try {
-      setIsSubmitting(true)
+      // Send to form-handler.php directly
+      const response = await fetch('form-handler.php', {
+        method: 'POST',
+        body: formData
+      })
       
-      const response = await apiRequest(
-        "POST",
-        "/api/contact",
-        {
-          name,
-          email,
-          phone,
-          message,
-          services
-        }
-      )
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
       
       const data = await response.json()
       
@@ -155,6 +157,7 @@ export default function ContactSection() {
                 <div>
                   <Input
                     ref={emailRef}
+                    name="email"
                     type="email"
                     placeholder={language === "de" ? "Email" : "Email"}
                     required
@@ -164,6 +167,7 @@ export default function ContactSection() {
                 <div>
                   <Input
                     ref={phoneRef}
+                    name="phone"
                     type="tel"
                     placeholder={language === "de" ? "Telefon (optional)" : "Phone (optional)"}
                     className="border-[#2F2F2F]/20 h-12 text-base rounded-lg focus:border-[#1A4D3C] focus:ring-1 focus:ring-[#1A4D3C]"
@@ -177,6 +181,8 @@ export default function ContactSection() {
                     <label className="flex items-center p-3 bg-[#F7F7F7] rounded-lg hover:bg-[#EAEAEA] transition-colors duration-200 cursor-pointer">
                       <input 
                         ref={repairsRef} 
+                        name="services[]" 
+                        value={language === "de" ? "Reparaturen" : "Repairs"}
                         type="checkbox" 
                         className="w-4 h-4 rounded border-[#2F2F2F]/30 text-[#1A4D3C] focus:ring-[#1A4D3C]" 
                       />
@@ -184,7 +190,9 @@ export default function ContactSection() {
                     </label>
                     <label className="flex items-center p-3 bg-[#F7F7F7] rounded-lg hover:bg-[#EAEAEA] transition-colors duration-200 cursor-pointer">
                       <input 
-                        ref={locksmithRef} 
+                        ref={locksmithRef}
+                        name="services[]"
+                        value={language === "de" ? "Schlüsseldienst" : "Locksmith"}
                         type="checkbox" 
                         className="w-4 h-4 rounded border-[#2F2F2F]/30 text-[#1A4D3C] focus:ring-[#1A4D3C]" 
                       />
@@ -192,7 +200,9 @@ export default function ContactSection() {
                     </label>
                     <label className="flex items-center p-3 bg-[#F7F7F7] rounded-lg hover:bg-[#EAEAEA] transition-colors duration-200 cursor-pointer">
                       <input 
-                        ref={transportRef} 
+                        ref={transportRef}
+                        name="services[]"
+                        value={language === "de" ? "Transporte" : "Transport"}
                         type="checkbox" 
                         className="w-4 h-4 rounded border-[#2F2F2F]/30 text-[#1A4D3C] focus:ring-[#1A4D3C]" 
                       />
@@ -200,7 +210,9 @@ export default function ContactSection() {
                     </label>
                     <label className="flex items-center p-3 bg-[#F7F7F7] rounded-lg hover:bg-[#EAEAEA] transition-colors duration-200 cursor-pointer">
                       <input 
-                        ref={assemblyRef} 
+                        ref={assemblyRef}
+                        name="services[]"
+                        value={language === "de" ? "Möbelaufbau" : "Assembly"}
                         type="checkbox" 
                         className="w-4 h-4 rounded border-[#2F2F2F]/30 text-[#1A4D3C] focus:ring-[#1A4D3C]" 
                       />
@@ -211,6 +223,7 @@ export default function ContactSection() {
                 <div>
                   <Textarea
                     ref={messageRef}
+                    name="message"
                     placeholder={language === "de" ? "Ihre Nachricht" : "Your Message"}
                     required
                     className="min-h-[150px] border-[#2F2F2F]/20 text-base rounded-lg resize-none focus:border-[#1A4D3C] focus:ring-1 focus:ring-[#1A4D3C]"
