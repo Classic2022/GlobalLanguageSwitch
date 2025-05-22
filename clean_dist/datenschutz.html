@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Datenschutzerklärung - Urban Reparaturen</title>
+    <meta name="description" content="Datenschutzerklärung der Urban Reparaturen - Ihr Partner für Wohnungspflege in Berlin">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <style>
+        :root {
+            --primary-color: #1A4D3C;
+            --secondary-color: #F7B422;
+            --text-color: #333333;
+            --light-text: #666666;
+            --lighter-text: #888888;
+            --background-color: #FFFFFF;
+            --light-background: #F5F7F9;
+            --border-color: #DDDDDD;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            padding: 20px 0;
+            background-color: var(--background-color);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .language-toggle {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .language-toggle:hover {
+            background-color: var(--light-background);
+        }
+        
+        .language-toggle span {
+            margin-left: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        
+        /* Page content */
+        .page-content {
+            padding: 60px 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .page-title p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .content-box h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .content-box h3 {
+            color: var(--primary-color);
+            margin: 30px 0 15px;
+            font-size: 1.4rem;
+        }
+        
+        .content-box p {
+            margin-bottom: 20px;
+        }
+        
+        .content-box ul, .content-box ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .content-box li {
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #0A2C22;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-tagline {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link {
+            margin-bottom: 10px;
+        }
+        
+        .footer-link a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .content-box {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px var(--shadow-color);
+            }
+            
+            .nav-list.active {
+                display: flex;
+            }
+            
+            .nav-item {
+                margin: 10px 0;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .content-box h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-box h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-content {
+                padding: 40px 0;
+            }
+            
+            .content-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Urban Reparaturen Logo">
+                    </a>
+                </div>
+                
+                <div class="nav">
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <ul class="nav-list" id="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html#services" class="nav-link">Leistungen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#about" class="nav-link">Über uns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact" class="nav-link">Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="impressum.html" class="nav-link">Impressum</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="language-toggle" id="language-toggle">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-language">DE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="page-title">
+                <h1>Datenschutzerklärung</h1>
+                <p>Stand: 21.05.2025</p>
+            </div>
+            
+            <div class="content-box">
+                <h2>Datenschutzerklärung</h2>
+                
+                <p>Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen. Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+                
+                <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+                
+                <h3>Verantwortliche Stelle</h3>
+                <p>Verantwortliche Stelle im Sinne der Datenschutzgesetze ist:</p>
+                <p>
+                    Urban Hausverwaltung UH GmbH<br>
+                    Zähringerstr. 28<br>
+                    10707 Berlin<br>
+                    Deutschland<br><br>
+                    Tel: +49 123 456 7890<br>
+                    E-Mail: info@urban-r.de
+                </p>
+                
+                <h3>Datenerfassung auf unserer Website</h3>
+                
+                <h4>Server-Log-Dateien</h4>
+                <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
+                <ul>
+                    <li>Browsertyp und Browserversion</li>
+                    <li>verwendetes Betriebssystem</li>
+                    <li>Referrer URL</li>
+                    <li>Hostname des zugreifenden Rechners</li>
+                    <li>Uhrzeit der Serveranfrage</li>
+                    <li>IP-Adresse</li>
+                </ul>
+                <p>Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.</p>
+                
+                <h3>Kontaktformular</h3>
+                <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.</p>
+                <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+                
+                <h3>Cookies</h3>
+                <p>Unsere Website verwendet keine Cookies zu Analysezwecken. Technisch notwendige Cookies können verwendet werden, um die Funktionalität der Website zu gewährleisten.</p>
+                
+                <h3>Datenübermittlung bei Vertragsschluss für Dienstleistungen</h3>
+                <p>Wir übermitteln personenbezogene Daten nur dann an Dritte, wenn dies im Rahmen der Vertragsabwicklung notwendig ist, etwa an das mit der Zahlungsabwicklung beauftragte Kreditinstitut.</p>
+                <p>Eine weitergehende Übermittlung der Daten erfolgt nicht bzw. nur dann, wenn Sie der Übermittlung ausdrücklich zugestimmt haben. Eine Weitergabe Ihrer Daten an Dritte ohne ausdrückliche Einwilligung, etwa zu Zwecken der Werbung, erfolgt nicht.</p>
+                <p>Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.</p>
+                
+                <h3>Rechte der betroffenen Person</h3>
+                <h4>Auskunftsrecht</h4>
+                <p>Sie haben das Recht, von uns eine Bestätigung darüber zu verlangen, ob betreffende personenbezogene Daten verarbeitet werden. Liegt eine solche Verarbeitung vor, können Sie von uns Auskunft über diese personenbezogenen Daten und folgende Informationen verlangen:</p>
+                <ul>
+                    <li>die Verarbeitungszwecke;</li>
+                    <li>die Kategorien personenbezogener Daten, die verarbeitet werden;</li>
+                    <li>die Empfänger oder Kategorien von Empfängern, gegenüber denen Ihre personenbezogenen Daten offengelegt worden sind oder noch offengelegt werden;</li>
+                    <li>falls möglich die geplante Dauer, für die Ihre personenbezogenen Daten gespeichert werden, oder, falls dies nicht möglich ist, die Kriterien für die Festlegung dieser Dauer;</li>
+                    <li>das Bestehen eines Rechts auf Berichtigung oder Löschung der Sie betreffenden personenbezogenen Daten oder auf Einschränkung der Verarbeitung durch uns oder eines Widerspruchsrechts gegen diese Verarbeitung;</li>
+                    <li>das Bestehen eines Beschwerderechts bei einer Aufsichtsbehörde;</li>
+                    <li>wenn die personenbezogenen Daten nicht bei Ihnen erhoben werden, alle verfügbaren Informationen über die Herkunft der Daten;</li>
+                    <li>das Bestehen einer automatisierten Entscheidungsfindung einschließlich Profiling gemäß Art. 22 Abs. 1 und 4 DSGVO und – zumindest in diesen Fällen – aussagekräftige Informationen über die involvierte Logik sowie die Tragweite und die angestrebten Auswirkungen einer derartigen Verarbeitung für Sie.</li>
+                </ul>
+                
+                <h4>Recht auf Berichtigung</h4>
+                <p>Sie haben das Recht, von uns unverzüglich die Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen. Unter Berücksichtigung der Zwecke der Verarbeitung haben Sie das Recht, die Vervollständigung unvollständiger personenbezogener Daten – auch mittels einer ergänzenden Erklärung – zu verlangen.</p>
+                
+                <h4>Recht auf Löschung ("Recht auf Vergessenwerden")</h4>
+                <p>Sie haben das Recht, von uns zu verlangen, dass Sie betreffende personenbezogene Daten unverzüglich gelöscht werden, und wir sind verpflichtet, personenbezogene Daten unverzüglich zu löschen, sofern einer der folgenden Gründe zutrifft:</p>
+                <ul>
+                    <li>Die personenbezogenen Daten sind für die Zwecke, für die sie erhoben oder auf sonstige Weise verarbeitet wurden, nicht mehr notwendig.</li>
+                    <li>Sie widerrufen Ihre Einwilligung, auf die sich die Verarbeitung gemäß Art. 6 Abs. 1 Buchstabe a oder Art. 9 Abs. 2 Buchstabe a DSGVO stützte, und es fehlt an einer anderweitigen Rechtsgrundlage für die Verarbeitung.</li>
+                    <li>Sie legen gemäß Art. 21 Abs. 1 DSGVO Widerspruch gegen die Verarbeitung ein und es liegen keine vorrangigen berechtigten Gründe für die Verarbeitung vor, oder Sie legen gemäß Art. 21 Abs. 2 DSGVO Widerspruch gegen die Verarbeitung ein.</li>
+                    <li>Die personenbezogenen Daten wurden unrechtmäßig verarbeitet.</li>
+                    <li>Die Löschung der personenbezogenen Daten ist zur Erfüllung einer rechtlichen Verpflichtung nach dem Unionsrecht oder dem Recht der Mitgliedstaaten erforderlich, dem wir unterliegen.</li>
+                    <li>Die personenbezogenen Daten wurden in Bezug auf angebotene Dienste der Informationsgesellschaft gemäß Art. 8 Abs. 1 DSGVO erhoben.</li>
+                </ul>
+                
+                <h4>Recht auf Einschränkung der Verarbeitung</h4>
+                <p>Sie haben das Recht, von uns die Einschränkung der Verarbeitung zu verlangen, wenn eine der folgenden Voraussetzungen gegeben ist:</p>
+                <ul>
+                    <li>die Richtigkeit der personenbezogenen Daten von Ihnen bestritten wird, und zwar für eine Dauer, die es uns ermöglicht, die Richtigkeit der personenbezogenen Daten zu überprüfen,</li>
+                    <li>die Verarbeitung unrechtmäßig ist und Sie die Löschung der personenbezogenen Daten ablehnen und stattdessen die Einschränkung der Nutzung der personenbezogenen Daten verlangen;</li>
+                    <li>wir die personenbezogenen Daten für die Zwecke der Verarbeitung nicht länger benötigen, Sie sie jedoch zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen benötigen, oder</li>
+                    <li>Sie Widerspruch gegen die Verarbeitung gemäß Art. 21 Abs. 1 DSGVO eingelegt haben, solange noch nicht feststeht, ob die berechtigten Gründe unsererseits gegenüber Ihren Gründen überwiegen.</li>
+                </ul>
+                
+                <h4>Recht auf Datenübertragbarkeit</h4>
+                <p>Sie haben das Recht, die Sie betreffenden personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten, und Sie haben das Recht, diese Daten einem anderen Verantwortlichen ohne Behinderung durch uns zu übermitteln, sofern die Verarbeitung auf einer Einwilligung gemäß Art. 6 Abs. 1 Buchstabe a oder Art. 9 Abs. 2 Buchstabe a oder auf einem Vertrag gemäß Art. 6 Abs. 1 Buchstabe b DSGVO beruht und die Verarbeitung mithilfe automatisierter Verfahren erfolgt.</p>
+                
+                <h4>Widerspruchsrecht</h4>
+                <p>Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 Buchstaben e oder f DSGVO erfolgt, Widerspruch einzulegen. Wir verarbeiten die personenbezogenen Daten nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.</p>
+                
+                <h4>Recht auf Beschwerde bei einer Aufsichtsbehörde</h4>
+                <p>Sie haben unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.</p>
+                
+                <h3>Änderungen unserer Datenschutzerklärung</h3>
+                <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+                
+                <h3>Fragen zum Datenschutz</h3>
+                <p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Organisation:</p>
+                <p>
+                    E-Mail: info@urban-r.de<br>
+                    Tel: +49 123 456 7890
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <img src="assets/logo-white.png" alt="Urban Reparaturen Logo">
+                    </div>
+                    <p class="footer-tagline">Ihr Partner für Wohnungspflege in Berlin</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-xing"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="index.html#services">Leistungen</a></li>
+                        <li class="footer-link"><a href="index.html#about">Über uns</a></li>
+                        <li class="footer-link"><a href="index.html#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Rechtliches</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="impressum.html">Impressum</a></li>
+                        <li class="footer-link"><a href="datenschutz.html">Datenschutz</a></li>
+                        <li class="footer-link"><a href="agb.html">AGB</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Kontakt</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link">Zähringerstr. 28</li>
+                        <li class="footer-link">10707 Berlin</li>
+                        <li class="footer-link"><a href="mailto:info@urban-r.de">info@urban-r.de</a></li>
+                        <li class="footer-link"><a href="tel:+491234567890">+49 123 456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 URBAN REPARATUREN. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navList = document.getElementById('nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // Language toggle (simplified for demo)
+            const languageToggle = document.getElementById('language-toggle');
+            const currentLanguage = document.getElementById('current-language');
+            
+            if (languageToggle && currentLanguage) {
+                languageToggle.addEventListener('click', function() {
+                    if (currentLanguage.textContent === 'DE') {
+                        currentLanguage.textContent = 'EN';
+                        // In a real implementation, this would switch language
+                    } else {
+                        currentLanguage.textContent = 'DE';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
