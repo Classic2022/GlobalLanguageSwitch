@@ -132,6 +132,32 @@
   <body>
     <div id="root"></div>
     
+    <!-- Contact Form Redirection Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for React to render the form
+        setTimeout(function() {
+          // Find all forms in the document
+          const forms = document.querySelectorAll('form');
+          
+          forms.forEach(form => {
+            // Set the form action to form-handler.php
+            form.setAttribute('action', 'form-handler.php');
+            form.setAttribute('method', 'POST');
+            
+            // Make sure the form has this attribute even if React tries to override it
+            const observer = new MutationObserver(function() {
+              if (form.getAttribute('action') !== 'form-handler.php') {
+                form.setAttribute('action', 'form-handler.php');
+              }
+            });
+            
+            // Start observing the form for attribute changes
+            observer.observe(form, { attributes: true });
+          });
+        }, 1000);
+      });
+    </script>
 
   </body>
 </html>
