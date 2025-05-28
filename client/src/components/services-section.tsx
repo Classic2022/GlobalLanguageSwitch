@@ -15,7 +15,7 @@ export default function ServicesSection() {
       },
       description: {
         de: "Fachgerechte Reparaturen durch erfahrene Handwerker",
-        en: "Professional repairs by experienced craftsmen",
+        en: "Professional repairs by experienced handymen",
       },
       subDescription: {
         de: "Minor renovations",

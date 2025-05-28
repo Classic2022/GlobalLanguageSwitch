@@ -29,7 +29,7 @@ export default function WhyUsSection() {
       rating: 5,
       text: {
         de: "Wirklich kompetenter Handwerker! Hat mein Schloss schnell ausgetauscht und war dabei sehr freundlich.",
-        en: "Really competent craftsman! Quickly replaced my lock and was very friendly."
+        en: "Really competent handyman! Quickly replaced my lock and was very friendly."
       }
     }
   ]

@@ -37,7 +37,7 @@ export default function AboutSection() {
               <p className="text-lg text-[#2F2F2F]/80 leading-relaxed">
                 {language === "de"
                   ? "Wir übernehmen alle Aufgaben rund um die Pflege und Instandhaltung Ihrer Wohnung: von fachgerechten Reparaturen durch erfahrene Handwerker über Schlüsseldienste und kleinere Umzüge bis hin zur Montage von Möbeln und Haushaltsgegenständen."
-                  : "We handle all tasks related to the care and maintenance of your apartment: from professional repairs by experienced craftsmen to locksmith services and minor moves to the assembly of furniture and household items."}
+                  : "We handle all tasks related to the care and maintenance of your apartment: from professional repairs by experienced handymen to locksmith services and minor moves to the assembly of furniture and household items."}
               </p>
               
               <div className="pt-4 grid grid-cols-2 gap-6">
