@@ -285,18 +285,23 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="flex items-start p-4 bg-[#F7F7F7] rounded-lg transition-all duration-200 hover:bg-[#EAEAEA]">
+                <a 
+                  href="https://maps.google.com/?q=Konstanzerstr.+54,+10707+Berlin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start p-4 bg-[#F7F7F7] rounded-lg transition-all duration-200 hover:bg-[#EAEAEA] hover:shadow-md cursor-pointer"
+                >
                   <div className="bg-[#1A4D3C]/10 p-3 rounded-full mr-4">
                     <MapPin className="h-6 w-6 text-[#1A4D3C]" />
                   </div>
                   <div>
                     <p className="text-sm text-[#2F2F2F]/60 mb-1">{language === "de" ? "Adresse" : "Address"}</p>
-                    <div className="text-[#2F2F2F] font-medium">
+                    <div className="text-[#2F2F2F] font-medium hover:text-[#1A4D3C] transition-colors">
                       <p>Konstanzerstr. 54</p>
                       <p>10707 Berlin</p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             
