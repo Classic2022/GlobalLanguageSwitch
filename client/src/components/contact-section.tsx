@@ -67,27 +67,26 @@ export default function ContactSection() {
       return
     }
     
-    // Set up form data
     setIsSubmitting(true)
     
-    // Get the form element
-    const form = e.target as HTMLFormElement
-    const formData = new FormData(form)
-    
     try {
-      // Send to form-handler.php directly
-      const response = await fetch('form-handler.php', {
+      // Create FormData for PHP submission
+      const formData = new FormData()
+      formData.append('name', name)
+      formData.append('email', email)
+      formData.append('phone', phone)
+      formData.append('message', message)
+      services.forEach(service => formData.append('services[]', service))
+      
+      // Send to contact-form.php
+      const response = await fetch('/contact-form.php', {
         method: 'POST',
         body: formData
       })
       
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
+      const responseText = await response.text()
       
-      const data = await response.json()
-      
-      if (data.success) {
+      if (response.ok) {
         setSubmitStatus('success')
         setStatusMessage(language === "de"
           ? "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze mit Ihnen in Verbindung setzen."
@@ -95,9 +94,9 @@ export default function ContactSection() {
         resetForm()
       } else {
         setSubmitStatus('error')
-        setStatusMessage(language === "de"
+        setStatusMessage(responseText || (language === "de"
           ? "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut."
-          : "There was a problem sending your message. Please try again later.")
+          : "There was a problem sending your message. Please try again later."))
       }
     } catch (error) {
       console.error("Form submission error:", error)

@@ -66,26 +66,44 @@ export default function ContactFormStatic() {
       return
     }
     
-    // Submit form - this is just for the static version simulation
+    setIsSubmitting(true)
+    
     try {
-      setIsSubmitting(true)
+      // Create FormData for PHP submission
+      const formData = new FormData()
+      formData.append('name', name)
+      formData.append('email', email)
+      formData.append('phone', phone)
+      formData.append('message', message)
+      services.forEach(service => formData.append('services[]', service))
       
-      // Simulate response - In production this will be handled by form-handler.php
-      setTimeout(() => {
+      // Send to contact-form.php
+      const response = await fetch('/contact-form.php', {
+        method: 'POST',
+        body: formData
+      })
+      
+      const responseText = await response.text()
+      
+      if (response.ok) {
         setSubmitStatus('success')
         setStatusMessage(language === "de"
           ? "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze mit Ihnen in Verbindung setzen."
           : "Thank you for your message. We will contact you shortly.")
         resetForm()
-        setIsSubmitting(false)
-      }, 1500)
-      
+      } else {
+        setSubmitStatus('error')
+        setStatusMessage(responseText || (language === "de"
+          ? "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut."
+          : "There was a problem sending your message. Please try again later."))
+      }
     } catch (error) {
       console.error("Form submission error:", error)
       setSubmitStatus('error')
       setStatusMessage(language === "de"
         ? "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut."
         : "There was a problem sending your message. Please try again later.")
+    } finally {
       setIsSubmitting(false)
     }
   }

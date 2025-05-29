@@ -11,11 +11,11 @@ Copy all files from the `dist/public/` folder to your Hostinger public_html dire
 ### 2. Server Configuration
 - Upload `.htaccess` file to public_html root for proper routing
 
-### 3. Environment Variables
-Set these environment variables in Hostinger control panel:
-- `MAILJET_API_KEY` - Your Mailjet API key
-- `MAILJET_SECRET_KEY` - Your Mailjet secret key
-- `NODE_ENV=production`
+### 3. PHP Contact Form
+Your contact form now uses PHP for email delivery:
+- The `contact-form.php` file handles form submissions
+- No API keys or server configuration needed
+- Emails are sent directly through PHP's mail() function
 
 ## Hostinger Setup Steps
 
