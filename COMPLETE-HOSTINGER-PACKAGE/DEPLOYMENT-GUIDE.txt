@@ -1,0 +1,31 @@
+URBAN REPARATUREN - HOSTINGER DEPLOYMENT GUIDE
+=====================================================
+
+QUICK UPLOAD INSTRUCTIONS:
+1. Login to your Hostinger control panel
+2. Open File Manager
+3. Navigate to public_html folder
+4. Upload ALL files from this package to public_html
+5. Your website will be live immediately!
+
+FILES TO UPLOAD:
+- index.html (main website)
+- contact-form.php (email handler)
+- .htaccess (routing configuration)
+- assets/ folder (complete with CSS/JS files)
+- images/ folder (complete with all images)
+
+CONTACT FORM:
+- Sends emails to: info@urban-r.de
+- No setup required - works immediately
+- No API keys needed
+
+FEATURES INCLUDED:
+✓ Bilingual website (German/English)
+✓ Interactive contact info (click to call/email/navigate)
+✓ Real social media links
+✓ PHP contact form
+✓ Responsive design
+✓ SEO optimized
+
+SUPPORT: Your professional Berlin apartment maintenance website is ready!
