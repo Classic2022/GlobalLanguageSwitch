@@ -109,10 +109,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </html>";
     
     // Email headers for HTML
-    $headers = "From: " . $name . " <" . $email . ">\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
+    $headers = "From: Urban Reparaturen Contact Form <info@urban-r.de>\r\n";
+    $headers .= "Reply-To: " . $name . " <" . $email . ">\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $headers .= "X-Mailer: Urban Reparaturen Website\r\n";
     
     // Send email
     if (mail($to, $subject, $email_content, $headers)) {
